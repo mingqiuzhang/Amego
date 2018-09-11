@@ -1,1 +1,1 @@
-# Amego
+# Amigos
