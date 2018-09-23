@@ -8,7 +8,7 @@ public class Weapon_Projectile : Weapon {
 
     public float fireRate = 0.25f;
 
-    private bool _canFire = true;
+    public bool _canFire = true;
 
     public override void Fire (Transform attackSpawnPoint)
     {
@@ -21,10 +21,15 @@ public class Weapon_Projectile : Weapon {
         StartCoroutine(AttackCooldown());
     }
 
-    IEnumerator AttackCooldown ()
+    public IEnumerator AttackCooldown ()
     {
         yield return new WaitForSeconds(fireRate);
 
+        _canFire = true;
+    }
+
+    public void Enable()
+    {
         _canFire = true;
     }
 }
