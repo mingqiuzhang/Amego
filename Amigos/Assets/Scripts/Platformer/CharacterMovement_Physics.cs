@@ -48,6 +48,8 @@ namespace Platformer
 
         private CharacterState _currentState = CharacterState.idle;
 
+        private int rangeAttackCount = 3;
+
         void Start()
         {
             _rigidbody = this.GetComponent<Rigidbody>();
@@ -123,10 +125,13 @@ namespace Platformer
 
         private void Attack ()
         {
+
             if (Input.GetAxis(attackAxis) > 0.5f)
             {
                 primaryAttack.Fire(attackPoint);
+                rangeAttackCount--;
             }
+
         }
 
         private void OnCollisionExit (Collision col)
