@@ -7,6 +7,9 @@ TagManager:
   - bow
   - arrow
   - weapon
+  - Player2
+  - Player3
+  - Player4
   layers:
   - Default
   - TransparentFX
