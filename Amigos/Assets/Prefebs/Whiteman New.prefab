@@ -215,7 +215,7 @@ GameObject:
   - component: {fileID: 114001012259186224}
   - component: {fileID: 114376374795810804}
   m_Layer: 0
-  m_Name: Whiteman 1 1
+  m_Name: Whiteman New
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
