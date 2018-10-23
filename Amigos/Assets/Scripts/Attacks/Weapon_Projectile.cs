@@ -34,12 +34,13 @@ public class Weapon_Projectile : Weapon {
     public float fireRate = 0.25f;
 
     public bool _canFire = true;
+
     private int uses = 3;
 
     public override void Fire (Transform attackSpawnPoint)
     {
 
-        if (!_canFire||uses==0) return;
+        if (!_canFire) return;
 
         GameObject projectile = (GameObject)Instantiate(projectilePrefab, attackSpawnPoint.position, attackSpawnPoint.rotation, null);
 
