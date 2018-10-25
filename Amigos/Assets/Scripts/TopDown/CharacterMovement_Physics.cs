@@ -58,9 +58,13 @@ namespace TopDown
 
         private Plane _groundPlane;
 
+        private Animator _playerAnimator;
+
         void Start()
         {
             _rigidbody = this.GetComponent<Rigidbody>();
+            _playerAnimator = this.GetComponent<Animator>();
+
             _groundPlane = new Plane(Vector3.up, this.transform.position);
 
             if (attackPoint == null) attackPoint = this.transform;
@@ -79,6 +83,8 @@ namespace TopDown
             {
                 _rigidbody.AddForce(_characterVelocity, ForceMode.Acceleration);
             }
+
+            _playerAnimator.SetFloat("fVelocity", _rigidbody.velocity.magnitude);
         }
 
         /// <summary>
