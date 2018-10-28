@@ -6,7 +6,6 @@ public class EquipedWeaponSwitch : MonoBehaviour
 {
 
     public GameObject[] current;
-<<<<<<< HEAD
 
     [HideInInspector]
     public enum CurrentWeapon { bow, sword, axe, staff };
