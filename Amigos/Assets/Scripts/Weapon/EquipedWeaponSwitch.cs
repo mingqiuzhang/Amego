@@ -7,6 +7,7 @@ public class EquipedWeaponSwitch : MonoBehaviour
 
     public GameObject[] current;
 <<<<<<< HEAD
+<<<<<<< HEAD
 
     [HideInInspector]
     public enum CurrentWeapon { bow, sword, axe, staff };
@@ -51,6 +52,22 @@ public class EquipedWeaponSwitch : MonoBehaviour
                     print(_collider.name);
                     i.SetActive(true);
                 }
+=======
+	// Use this for initialization
+	void Start () {
+	}
+
+    void OnTriggerEnter(Collider _collider)
+    {
+        if (_collider.gameObject.tag == "weapon" || _collider.gameObject.tag == "bow")
+        {
+            foreach (GameObject i in current)
+            {
+                if (i.active && i.name != _collider.name)
+                {
+                    i.SetActive(false);
+                }
+>>>>>>> 95b7d8f77465873e1856df25f85735241526440e
 =======
 	// Use this for initialization
 	void Start () {
