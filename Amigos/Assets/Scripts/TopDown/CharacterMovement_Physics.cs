@@ -52,20 +52,19 @@ namespace TopDown
         private bool _canAim = true;
         private bool _canAttack = true;
 
-        private AnimationHandler animationHandler;
-
         private Vector3 _storedVelocity = Vector3.zero;
 
         private CharacterState state = CharacterState.idle;
 
         private Plane _groundPlane;
 
-        
+        private Animator _playerAnimator;
 
         void Start()
         {
             _rigidbody = this.GetComponent<Rigidbody>();
-            animationHandler = GetComponent<AnimationHandler>();
+            _playerAnimator = this.GetComponent<Animator>();
+
             _groundPlane = new Plane(Vector3.up, this.transform.position);
 
             if (attackPoint == null) attackPoint = this.transform;
@@ -85,7 +84,7 @@ namespace TopDown
                 _rigidbody.AddForce(_characterVelocity, ForceMode.Acceleration);
             }
 
-            animationHandler.SetAnimatorVelocity( _rigidbody.velocity.magnitude);
+            _playerAnimator.SetFloat("fVelocity", _rigidbody.velocity.magnitude);
         }
 
         /// <summary>
@@ -181,11 +180,7 @@ namespace TopDown
 
             if (Input.GetAxis(attackAxis) > 0.5f)
             {
-                if(EquipedWeaponSwitch.weapon == EquipedWeaponSwitch.CurrentWeapon.bow)
-                {
-                    primaryAttack.Fire(attackPoint);
-                }
-                animationHandler.PlayAttackAnimation(EquipedWeaponSwitch.weapon);
+                primaryAttack.Fire(attackPoint);
             }
         }
 
