@@ -20,6 +20,10 @@ public class InstantDead : MonoBehaviour {
         if (collision.gameObject.tag == "weapon")
         {
             character.SetActive(false);
+        }
+        if (collision.gameObject.tag == "arrow")
+        {
+            character.SetActive(false);
             collision.gameObject.SetActive(false);
         }
     }

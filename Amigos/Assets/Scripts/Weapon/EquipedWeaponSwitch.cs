@@ -17,7 +17,7 @@ public class EquipedWeaponSwitch : MonoBehaviour {
 
     void OnTriggerEnter(Collider _collider)
     {
-        if (_collider.gameObject.tag == "weapon")
+        if (_collider.gameObject.tag == "GroundWeapon")
         {
             foreach (GameObject i in current)
             {
