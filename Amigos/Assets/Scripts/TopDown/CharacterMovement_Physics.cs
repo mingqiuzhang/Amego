@@ -1,8 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-namespace TopDown
-{
     [RequireComponent(typeof(Rigidbody))]
     [RequireComponent(typeof(Collider))]
     public class CharacterMovement_Physics : MonoBehaviour
@@ -210,4 +208,4 @@ namespace TopDown
             }
         }
     }
-}
+
