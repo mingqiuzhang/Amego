@@ -35,9 +35,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4657919316521162}
   - component: {fileID: 7973541675397922694}
+  - component: {fileID: 54451655075335644}
+  - component: {fileID: 65688657299518074}
   m_Layer: 0
   m_Name: sword
-  m_TagString: Untagged
+  m_TagString: weapon
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -406,9 +408,10 @@ GameObject:
   - component: {fileID: 114948934037748752}
   - component: {fileID: 114083179149235732}
   - component: {fileID: 114805143978930110}
+  - component: {fileID: 114870874299286140}
   m_Layer: 0
   m_Name: WhitemanFinished Player3
-  m_TagString: Player
+  m_TagString: Player3
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2200,7 +2203,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1231942389159718}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07314164, y: 0.02, z: -7.2990766}
+  m_LocalPosition: {x: 0.22932427, y: 0.02, z: -7.6270065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4634782914204098}
@@ -3086,6 +3089,33 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!54 &54451655075335644
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049637332744956}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &65688657299518074
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1049637332744956}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.05, y: 0.3, z: 0.1}
+  m_Center: {x: 0, y: 0.14, z: 0.04}
 --- !u!95 &95649588229449930
 Animator:
   serializedVersion: 3
@@ -3129,6 +3159,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194ba264301cf48898982590f23e8398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlayerNumber: 3
+  m_TurnSpeed: 180
   horizontalAxis: Horizontal_Controller3
   verticalAxis: Vertical_Controller3
   horizontalThumbstick: Horizontal_Controller3
@@ -3164,6 +3196,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   current: []
+--- !u!114 &114870874299286140
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1231942389159718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f302311c7b44eee4a9f4957575070089, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  character: {fileID: 1231942389159718}
 --- !u!114 &114948934037748752
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3175,10 +3219,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49921a08cc3614024b556700909f92a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlayerNumber: 4
   projectilePrefab: {fileID: 1795095048159456, guid: 87700b461b1b77e4ea7d7572a5e42bda,
     type: 2}
   fireRate: 0.25
-  _canFire: 0
 --- !u!136 &136407262876804428
 CapsuleCollider:
   m_ObjectHideFlags: 1

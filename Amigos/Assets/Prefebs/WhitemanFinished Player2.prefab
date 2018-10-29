@@ -467,7 +467,7 @@ GameObject:
   - component: {fileID: 114031108916697532}
   m_Layer: 0
   m_Name: WhitemanFinished Player2
-  m_TagString: Player
+  m_TagString: Player2
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3183,6 +3183,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194ba264301cf48898982590f23e8398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlayerNumber: 2
+  m_TurnSpeed: 180
   horizontalAxis: Horizontal_Controller2
   verticalAxis: Vertical_Controller2
   horizontalThumbstick: Horizontal_Controller2
@@ -3206,10 +3208,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49921a08cc3614024b556700909f92a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlayerNumber: 4
   projectilePrefab: {fileID: 1795095048159456, guid: 87700b461b1b77e4ea7d7572a5e42bda,
     type: 2}
   fireRate: 0.25
-  _canFire: 0
 --- !u!114 &114865506344093848
 MonoBehaviour:
   m_ObjectHideFlags: 1

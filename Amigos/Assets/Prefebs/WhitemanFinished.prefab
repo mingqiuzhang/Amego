@@ -3146,6 +3146,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 194ba264301cf48898982590f23e8398, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlayerNumber: 1
+  m_TurnSpeed: 180
   horizontalAxis: Horizontal_Controller1
   verticalAxis: Vertical_Controller1
   horizontalThumbstick: Horizontal_Controller1
@@ -3230,10 +3232,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49921a08cc3614024b556700909f92a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_PlayerNumber: 4
   projectilePrefab: {fileID: 1795095048159456, guid: 87700b461b1b77e4ea7d7572a5e42bda,
     type: 2}
   fireRate: 0.25
-  _canFire: 0
 --- !u!136 &136124114957644948
 CapsuleCollider:
   m_ObjectHideFlags: 1
