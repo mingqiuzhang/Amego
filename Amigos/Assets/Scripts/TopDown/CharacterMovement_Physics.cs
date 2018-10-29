@@ -21,6 +21,9 @@ using System.Collections;
             moving
         }
 
+        public int m_PlayerNumber = 1;
+        public float m_TurnSpeed = 180f;
+
         [Header("Input Axes")]
         public string horizontalAxis = "Horizontal";
         public string verticalAxis = "Vertical";
@@ -51,14 +54,18 @@ using System.Collections;
         private bool _canAttack = true;
 
         private AnimationHandler animationHandler;
-
         private Vector3 _storedVelocity = Vector3.zero;
-
         private CharacterState state = CharacterState.idle;
-
         private Plane _groundPlane;
 
-        public int m_PlayerNumber = 4;
+        private float m_MovementInputValue = 0f;        
+        private float m_TurnInputValue = 0f;
+
+
+        private void Awake()
+        {
+            _rigidbody = this.GetComponent<Rigidbody>();
+        }
 
 
         void Start()
@@ -83,7 +90,7 @@ using System.Collections;
             {
                 _rigidbody.AddForce(_characterVelocity, ForceMode.Acceleration);
             }
-
+            Turn();
             animationHandler.SetAnimatorVelocity(_rigidbody.velocity.magnitude);
         }
 
@@ -188,6 +195,12 @@ using System.Collections;
             }
         }
 
+        private void Turn ()
+        {
+            float turn = m_TurnInputValue * m_TurnSpeed * Time.deltaTime;
+            Quaternion turnRotation = Quaternion.Euler (0f, turn, 0f);
+           _rigidbody.MoveRotation (_rigidbody.rotation * turnRotation);
+        }
         /// <summary>
         /// Freeze the character in place, store the current character velocity, or unfreeze the character and resume character velocity.
         /// </summary>
