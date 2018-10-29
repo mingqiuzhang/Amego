@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Weapon_Projectile : Weapon {
 
+    public int m_PlayerNumber = 4;
+
     void Start()
     {
         projectilePrefab = AssetDatabase.LoadAssetAtPath("Assets/prefebs/arrow.prefab", typeof(GameObject));

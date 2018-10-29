@@ -58,6 +58,7 @@ using System.Collections;
 
         private Plane _groundPlane;
 
+        public int m_PlayerNumber = 4;
 
 
         void Start()
