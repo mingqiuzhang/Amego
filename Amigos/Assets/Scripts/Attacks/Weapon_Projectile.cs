@@ -21,7 +21,7 @@ public class Weapon_Projectile : Weapon {
 
     void OnTriggerEnter(Collider _collision)
     {
-        if (_collision.gameObject.tag == "weapon")
+        if (_collision.gameObject.tag == "GropundWeapon")
         {
             _canFire = false;
         }
@@ -29,13 +29,15 @@ public class Weapon_Projectile : Weapon {
         else if (_collision.gameObject.tag == "bow")
         {
             _canFire = true;
+            uses = 3;
+            print(uses);
         }
     }
     public Object projectilePrefab; 
 
     public float fireRate = 0.25f;
 
-    public bool _canFire = true;
+    public static bool _canFire = true;
 
     private int uses = 3;
 
@@ -51,6 +53,7 @@ public class Weapon_Projectile : Weapon {
         StartCoroutine(AttackCooldown());
 
         uses--;
+        print(uses);
     }
 
     public IEnumerator AttackCooldown ()
@@ -60,7 +63,7 @@ public class Weapon_Projectile : Weapon {
         _canFire = true;
     }
 
-    public void Enable()
+    public static void Enable()
     {
         _canFire = true;
     }

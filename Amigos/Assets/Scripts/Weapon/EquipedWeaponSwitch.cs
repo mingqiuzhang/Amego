@@ -19,7 +19,7 @@ public class EquipedWeaponSwitch : MonoBehaviour
 
     void OnTriggerEnter(Collider _collider)
     {
-        if (_collider.gameObject.tag == "GroundWeapon")
+        if (_collider.gameObject.tag == "GroundWeapon" || _collider.gameObject.tag == "bow")
         {
             foreach (GameObject i in current)
             {
@@ -34,6 +34,7 @@ public class EquipedWeaponSwitch : MonoBehaviour
                     if (_collider.name == "bow")
                     {
                         weapon = CurrentWeapon.bow;
+                        Weapon_Projectile.Enable();
                     }
                     else if (_collider.name == "staff")
                     {
@@ -51,6 +52,7 @@ public class EquipedWeaponSwitch : MonoBehaviour
                     i.SetActive(true);
                 }
             }
+            _collider.gameObject.SetActive(false);
         }
     }
 }
