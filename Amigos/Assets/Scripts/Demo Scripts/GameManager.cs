@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour {
     public float m_EndDelay = 3f;               // The delay between the end of RoundPlaying and RoundEnding phases.
     public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
     public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
-    public GameObject m_PlayerPrefab;             // Reference to the prefab the players will control.
+    public GameObject[] m_PlayerPrefab;             // Reference to the prefab the players will control.
     public PlayerManager[] m_Players;               // A collection of managers for enabling and disabling different aspects of the players.
 
 
@@ -62,8 +62,9 @@ public class GameManager : MonoBehaviour {
         {
             // ... create them, set their player number and references needed for control.
             m_Players[i].m_Instance =
-                Instantiate(m_PlayerPrefab, m_Players[i].m_SpawnPoint.position, m_Players[i].m_SpawnPoint.rotation) as GameObject;
+                Instantiate(m_PlayerPrefab[i], m_Players[i].m_SpawnPoint.position, m_Players[i].m_SpawnPoint.rotation) as GameObject;
             m_Players[i].m_PlayerNumber = i + 1;
+
             m_Players[i].Setup();
         }
     }
