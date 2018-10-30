@@ -63,7 +63,7 @@ using System.Collections;
 
 
         private void Awake()
-        {
+        { 
             _rigidbody = this.GetComponent<Rigidbody>();
         }
 
