@@ -16,13 +16,12 @@ public class PlayerManager
     private Weapon_Projectile m_Shooting;                        // Used to disable and enable control.
     private GameObject m_CanvasGameObject;                  // Used to disable the world space UI during the Starting and Ending phases of each round.
 
-
     public void Setup()
     {
         // Get references to the components.
         m_Movement = m_Instance.GetComponent<CharacterMovement_Physics>();
         m_Shooting = m_Instance.GetComponent<Weapon_Projectile>();
-        m_CanvasGameObject = m_Instance.GetComponentInChildren<Canvas>().gameObject;
+        //m_CanvasGameObject = m_Instance.GetComponentInChildren<Canvas>().gameObject;
 
         // Set the player numbers to be consistent across the scripts.
         m_Movement.m_PlayerNumber = m_PlayerNumber;
@@ -32,14 +31,18 @@ public class PlayerManager
         m_ColoredPlayerText = "<color=#" + ColorUtility.ToHtmlStringRGB(m_PlayerColor) + ">PLAYER " + m_PlayerNumber + "</color>";
 
         // Get all of the renderers of the player.
-        MeshRenderer[] renderers = m_Instance.GetComponentsInChildren<MeshRenderer>();
+        //MeshRenderer renderers = m_Instance.GetComponent<MeshRenderer>();
 
+        //renderers.material.SetColor("_Color", Color.green);
+        //renderers.material.color = m_PlayerColor;
+        /*
         // Go through all the renderers...
         for (int i = 0; i < renderers.Length; i++)
         {
             // ... set their material color to the color specific to this player.
             renderers[i].material.color = m_PlayerColor;
         }
+        */
     }
 
 
@@ -49,7 +52,7 @@ public class PlayerManager
         m_Movement.enabled = false;
         m_Shooting.enabled = false;
 
-        m_CanvasGameObject.SetActive(false);
+        //m_CanvasGameObject.SetActive(false);
     }
 
 
@@ -59,7 +62,7 @@ public class PlayerManager
         m_Movement.enabled = true;
         m_Shooting.enabled = true;
 
-        m_CanvasGameObject.SetActive(true);
+        //m_CanvasGameObject.SetActive(true);
     }
 
 
