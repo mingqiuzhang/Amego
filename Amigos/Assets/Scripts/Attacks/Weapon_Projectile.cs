@@ -9,7 +9,8 @@ public class Weapon_Projectile : Weapon {
 
     void Start()
     {
-        projectilePrefab = AssetDatabase.LoadAssetAtPath("Assets/prefebs/arrow.prefab", typeof(GameObject));
+        //projectilePrefab = AssetDatabase.LoadAssetAtPath("Assets/Prefebs/arrow.prefab", typeof(GameObject));
+        //projectilePrefab = Resources.Load("Assets/prefebs/arrow.prefab");
     }
     void Update()
     {
