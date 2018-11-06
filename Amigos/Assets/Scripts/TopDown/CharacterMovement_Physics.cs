@@ -221,5 +221,25 @@ using System.Collections;
 
             }
         }
+
+        //These Methods Are To Be Used By Other Scripts, They Will Change These Character Boolean Values.
+        public void set_canMove(bool b)
+        {
+            _canMove = b;
+        }
+        public void set_canAim(bool b)
+        {
+            _canAim = b;
+        }
+        public void set_canAttack(bool b)
+        {
+            _canAttack = b;
+        }
+
+        public Rigidbody return_rigidbody()
+        {
+            return _rigidbody;
+        }
+
     }
 
