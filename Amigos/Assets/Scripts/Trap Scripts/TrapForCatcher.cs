@@ -52,6 +52,7 @@ public class TrapForCatcher : MonoBehaviour {
 
             other.GetComponent<Rigidbody>().isKinematic = true;
             other.GetComponent<CharacterMovement_Physics>().set_canAim(false);
+            other.GetComponent<Animator>().SetTrigger("tSlip");
 
             //Start The Timer, Once 3 Seconds Has Passed The Player Could Move Again. Players Will Be Freezed If They Step On A Catcher
             timeStarted = true;

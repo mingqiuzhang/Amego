@@ -6,7 +6,7 @@ public class TrapScript : MonoBehaviour {
 
     float timer = 0.0f;
     bool timeStarted = false;
-    int seconds;
+    float seconds;
 
     //Set A Private Collider As The Collider We Want To Control
     private Collider current_collision;
@@ -23,11 +23,11 @@ public class TrapScript : MonoBehaviour {
 		if (timeStarted == true)
         {
             timer += Time.deltaTime;
-            seconds = (int)(timer % 60);
+            seconds = (float)(timer % 60);
         }
 
         //Set Player Able To Move After 3 Seconds
-        if (seconds == 3)
+        if (seconds >= 2.25)
         {
             current_collision.GetComponent<CharacterMovement_Physics>().set_canMove(true);
             current_collision.GetComponent<CharacterMovement_Physics>().set_canAim(true);
@@ -46,7 +46,7 @@ public class TrapScript : MonoBehaviour {
             current_collision = other;
             other.GetComponent<CharacterMovement_Physics>().set_canMove(false);
             other.GetComponent<CharacterMovement_Physics>().set_canAim(false);
-
+            other.GetComponent<Animator>().SetTrigger("tSlip");
             //Start The Timer, Once 3 Seconds Has Passed The Player Could Move Again. Players Will Slide If They Moved Onto A Banana.
             timeStarted = true;
         }
