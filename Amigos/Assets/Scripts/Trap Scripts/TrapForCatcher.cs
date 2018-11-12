@@ -12,10 +12,11 @@ public class TrapForCatcher : MonoBehaviour {
     private Collider current_collision;
     private Rigidbody current_rigi;
     private Vector3 _storedVelocity = Vector3.zero;
+    private Animator animator;
     // Use this for initialization
     void Start()
     {
-
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -56,5 +57,6 @@ public class TrapForCatcher : MonoBehaviour {
             timeStarted = true;
         }
 
+        animator.SetTrigger("tActivate");
     }
 }
