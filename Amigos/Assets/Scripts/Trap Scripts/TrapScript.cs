@@ -24,16 +24,18 @@ public class TrapScript : MonoBehaviour {
         {
             timer += Time.deltaTime;
             seconds = (float)(timer % 60);
+
+            //Set Player Able To Move After 3 Seconds
+            if (seconds >= 2.25)
+            {
+                current_collision.GetComponent<CharacterMovement_Physics>().set_canMove(true);
+                current_collision.GetComponent<CharacterMovement_Physics>().set_canAim(true);
+                timeStarted = false;
+                timer = 0.0f;
+            }
         }
 
-        //Set Player Able To Move After 3 Seconds
-        if (seconds >= 2.25)
-        {
-            current_collision.GetComponent<CharacterMovement_Physics>().set_canMove(true);
-            current_collision.GetComponent<CharacterMovement_Physics>().set_canAim(true);
-            timeStarted = false;
-            timer = 0.0f;
-        }
+
 	}
 
 

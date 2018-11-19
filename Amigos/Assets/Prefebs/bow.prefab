@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 65397779935480812}
   m_Layer: 0
   m_Name: bow
-  m_TagString: GroundWeapon
+  m_TagString: bow
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -152,7 +152,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1104961995832318}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.339751, y: 2.5201397, z: 9.146693}
+  m_LocalPosition: {x: 23.6, y: 2.5201397, z: 11.8}
   m_LocalScale: {x: 36.037388, y: 36.037388, z: 36.037388}
   m_Children:
   - {fileID: 4963466881142622}
