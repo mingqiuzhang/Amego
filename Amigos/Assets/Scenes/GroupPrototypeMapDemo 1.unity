@@ -2472,6 +2472,34 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6396e6bc30495f24ebfe716597ebdb42, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &842167869 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100006, guid: 6396e6bc30495f24ebfe716597ebdb42,
+    type: 3}
+  m_PrefabInternal: {fileID: 842167868}
+--- !u!65 &842167870
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 842167869}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5, y: 7, z: 1.5}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &842167871
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 842167869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 508af5d18b8d0214481f180168139a72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &871927469 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: c0d924516af6bf642a86aa8292382446,
@@ -2751,7 +2779,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1216246555421708, guid: edb0171e409f61d46ba913cbdc13027d, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114530806915904108, guid: edb0171e409f61d46ba913cbdc13027d,
         type: 2}
@@ -3779,7 +3807,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1231942389159718, guid: 30f5b89792ef2df47ad472ef7172f4c7, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114608859071244444, guid: 30f5b89792ef2df47ad472ef7172f4c7,
         type: 2}
@@ -5521,7 +5549,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1290485358048824, guid: e580dcdd148a6384d99efb82fce6cc84, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114050152983504928, guid: e580dcdd148a6384d99efb82fce6cc84,
         type: 2}
@@ -6230,7 +6258,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1648341936147938, guid: 0d5fa45a73ac87e44848250aeca4890f, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d5fa45a73ac87e44848250aeca4890f, type: 2}
