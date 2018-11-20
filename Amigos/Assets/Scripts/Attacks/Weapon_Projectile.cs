@@ -23,7 +23,7 @@ public class Weapon_Projectile : Weapon {
 
     void OnTriggerEnter(Collider _collision)
     {
-        if (_collision.gameObject.tag == "GropundWeapon")
+        if (_collision.gameObject.tag == "GroundWeapon")
         {
             _canFire = false;
         }
