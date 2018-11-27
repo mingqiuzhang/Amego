@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AnimationHandler : MonoBehaviour {
     private Animator _playerAnimator;
-
+    private CharacterMovement_Physics _character;
     // Use this for initialization
     void Start () {
         _playerAnimator = this.GetComponent<Animator>();
-
+        _character = this.GetComponent<CharacterMovement_Physics>();
     }
 	
     public void PlayAttackAnimation(EquipedWeaponSwitch.CurrentWeapon i_weapon)

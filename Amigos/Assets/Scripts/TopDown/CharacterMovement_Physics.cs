@@ -75,6 +75,7 @@ using System.Collections;
             _groundPlane = new Plane(Vector3.up, this.transform.position);
 
             if (attackPoint == null) attackPoint = this.transform;
+            _canAttack = false;
         }
 
         private void Update()
