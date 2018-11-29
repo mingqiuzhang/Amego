@@ -61,6 +61,9 @@ using System.Collections;
         private float m_MovementInputValue = 0f;        
         private float m_TurnInputValue = 0f;
 
+        private bool _canFireArrow = false;
+
+        private Weapon_Projectile _fire_control_system;
 
         private void Awake()
         { 
@@ -75,6 +78,8 @@ using System.Collections;
             _groundPlane = new Plane(Vector3.up, this.transform.position);
 
             if (attackPoint == null) attackPoint = this.transform;
+
+            _fire_control_system = this.GetComponent<Weapon_Projectile>();
         }
 
         private void Update()
@@ -189,10 +194,20 @@ using System.Collections;
             {
                 if (EquipedWeaponSwitch.weapon == EquipedWeaponSwitch.CurrentWeapon.bow)
                 {
-                    primaryAttack.Fire(attackPoint);
+                    if (_fire_control_system._canFire == false)
+                    {
+                        return;
+                    }
                 }
                 animationHandler.PlayAttackAnimation(EquipedWeaponSwitch.weapon);
+ 
             }
+        }
+
+        private void FireArrow()
+        {
+            //_character.primaryAttack.Fire(_character.attackPoint);
+            primaryAttack.Fire(attackPoint);
         }
 
         private void Turn ()

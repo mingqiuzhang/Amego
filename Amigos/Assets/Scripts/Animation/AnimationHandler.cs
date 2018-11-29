@@ -5,29 +5,37 @@ using UnityEngine;
 public class AnimationHandler : MonoBehaviour {
     private Animator _playerAnimator;
     private CharacterMovement_Physics _character;
+
+    Transform _sword;
+    Collider _collider_of_sword;
     // Use this for initialization
     void Start () {
         _playerAnimator = this.GetComponent<Animator>();
         _character = this.GetComponent<CharacterMovement_Physics>();
+        _sword = this.transform.GetChild(2).GetChild(2);
+        _collider_of_sword = _sword.GetComponent<Collider>();
+        _collider_of_sword.enabled = false;
     }
 
-    public void StartSwordAttack()
+    private void StartSwordAttack()
     {
-        print("Sword dealing damage now");
+        _collider_of_sword.enabled = true;
     }
 
-    public void EndSwordAttack()
+    private void EndSwordAttack()
     {
-        print("Sword not dealing damage now");
+        _collider_of_sword.enabled = false;
     }
-	
+
+
+
     public void PlayAttackAnimation(EquipedWeaponSwitch.CurrentWeapon i_weapon)
     {
         switch (i_weapon)
         {
             case EquipedWeaponSwitch.CurrentWeapon.bow:
                 _playerAnimator.SetTrigger("tBowAttack");
-                break;
+                return;
             case EquipedWeaponSwitch.CurrentWeapon.sword:
                 _playerAnimator.SetTrigger("tSwordAttack");
                 break;

@@ -12,9 +12,11 @@ public class EquipedWeaponSwitch : MonoBehaviour
     [HideInInspector]
     public static CurrentWeapon weapon;
 
+    private Weapon_Projectile _weapon_pro;
     // Use this for initialization
     void Start()
     {
+        _weapon_pro = this.GetComponent<Weapon_Projectile>();
     }
 
     void OnTriggerEnter(Collider _collider)
@@ -23,7 +25,6 @@ public class EquipedWeaponSwitch : MonoBehaviour
         {
             foreach (GameObject i in current)
             {
-                print(_collider.name);
 
                 if (i.name != _collider.name)
                 {
@@ -34,7 +35,7 @@ public class EquipedWeaponSwitch : MonoBehaviour
                     if (_collider.name == "bow")
                     {
                         weapon = CurrentWeapon.bow;
-                        Weapon_Projectile.Enable();
+                        _weapon_pro.Enable(); 
                     }
                     else if (_collider.name == "staff")
                     {

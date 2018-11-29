@@ -39,7 +39,7 @@ public class Weapon_Projectile : Weapon {
 
     public float fireRate = 0.25f;
 
-    public static bool _canFire = true;
+    public bool _canFire = true;
 
     private int uses = 3;
 
@@ -65,8 +65,13 @@ public class Weapon_Projectile : Weapon {
         _canFire = true;
     }
 
-    public static void Enable()
+    public void Enable()
     {
         _canFire = true;
+    }
+
+    public void Disable()
+    {
+        _canFire = false;
     }
 }
