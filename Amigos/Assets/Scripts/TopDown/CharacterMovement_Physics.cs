@@ -198,17 +198,19 @@ using System.Collections;
                     {
                         return;
                     }
+                    else
+                    {
+                        animationHandler.PlayAttackAnimation(EquipedWeaponSwitch.weapon);
+                    }
                 }
-                animationHandler.PlayAttackAnimation(EquipedWeaponSwitch.weapon);
- 
+                else
+                {
+                    animationHandler.PlayAttackAnimation(EquipedWeaponSwitch.weapon);
+                }          
             }
         }
 
-        private void FireArrow()
-        {
-            //_character.primaryAttack.Fire(_character.attackPoint);
-            primaryAttack.Fire(attackPoint);
-        }
+
 
         private void Turn ()
         {

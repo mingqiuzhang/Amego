@@ -21,31 +21,31 @@ public class EquipedWeaponSwitch : MonoBehaviour
 
     void OnTriggerEnter(Collider _collider)
     {
-        if (_collider.gameObject.tag == "GroundWeapon" || _collider.gameObject.tag == "bow")
+        if (_collider.gameObject.tag == "sword" || _collider.gameObject.tag == "bow")
         {
             foreach (GameObject i in current)
             {
 
-                if (i.name != _collider.name)
+                if (i.name != _collider.gameObject.tag)
                 {
                     i.SetActive(false);
                 }
                 else
                 {
-                    if (_collider.name == "bow")
+                    if (_collider.gameObject.tag == "bow")
                     {
                         weapon = CurrentWeapon.bow;
                         _weapon_pro.Enable(); 
                     }
-                    else if (_collider.name == "staff")
+                    else if (_collider.gameObject.tag == "staff")
                     {
                         weapon = CurrentWeapon.staff;
                     }
-                    else if (_collider.name == "axe")
+                    else if (_collider.gameObject.tag == "axe")
                     {
                         weapon = CurrentWeapon.axe;
                     }
-                    else if (_collider.name == "sword")
+                    else if (_collider.gameObject.tag == "sword")
                     {
                         weapon = CurrentWeapon.sword;
                     }

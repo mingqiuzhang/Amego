@@ -53,7 +53,7 @@ GameObject:
   - component: {fileID: 65921112909875156}
   m_Layer: 0
   m_Name: sword
-  m_TagString: GroundWeapon
+  m_TagString: sword
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -209,7 +209,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1415056039990536}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.3630874, y: 1.912442, z: 9.062527}
+  m_LocalPosition: {x: -27.15, y: 1.7, z: 5.57}
   m_LocalScale: {x: 7.529405, y: 7.529405, z: 7.529405}
   m_Children:
   - {fileID: 4773564027458852}

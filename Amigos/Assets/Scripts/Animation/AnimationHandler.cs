@@ -27,7 +27,11 @@ public class AnimationHandler : MonoBehaviour {
         _collider_of_sword.enabled = false;
     }
 
-
+    private void FireArrow()
+    {
+        _character.primaryAttack.Fire(_character.attackPoint);
+        //primaryAttack.Fire(attackPoint);
+    }
 
     public void PlayAttackAnimation(EquipedWeaponSwitch.CurrentWeapon i_weapon)
     {
@@ -35,7 +39,7 @@ public class AnimationHandler : MonoBehaviour {
         {
             case EquipedWeaponSwitch.CurrentWeapon.bow:
                 _playerAnimator.SetTrigger("tBowAttack");
-                return;
+                break;
             case EquipedWeaponSwitch.CurrentWeapon.sword:
                 _playerAnimator.SetTrigger("tSwordAttack");
                 break;
