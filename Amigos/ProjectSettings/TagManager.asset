@@ -12,6 +12,7 @@ TagManager:
   - Player4
   - GroundWeapon
   - Trap
+  - sword
   layers:
   - Default
   - TransparentFX
