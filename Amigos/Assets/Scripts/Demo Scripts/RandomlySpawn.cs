@@ -43,10 +43,10 @@ public class RandomlySpawn : MonoBehaviour {
 
     public void RandomSpawn()
     {
-        pos1 = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.y / 2, size.y / 2));
-        pos2 = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.y / 2, size.y / 2)); 
-        pos3 = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.y / 2, size.y / 2));
-        pos4 = center + new Vector3(Random.Range(-size.x / 2, size.x / 2), Random.Range(-size.y / 2, size.y / 2), Random.Range(-size.y / 2, size.y / 2));
+        pos1 = center + new Vector3(Random.Range(-size.x, size.x), 2, Random.Range(-size.z, size.z));
+        pos2 = center + new Vector3(Random.Range(-size.x, size.x), 2, Random.Range(-size.z, size.z)); 
+        pos3 = center + new Vector3(Random.Range(-size.x, size.x), 2, Random.Range(-size.z, size.z));
+        pos4 = center + new Vector3(Random.Range(-size.x, size.x    ), 2, Random.Range(-size.z, size.z));
         if (Time.time > nextSpawn && temp != 0)
         {
             whatToSpawn = Random.Range(1, 4);
