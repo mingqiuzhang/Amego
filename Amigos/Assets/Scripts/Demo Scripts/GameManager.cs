@@ -39,13 +39,21 @@ public class GameManager : MonoBehaviour {
     private WaitForSeconds m_EndWait;           // Used to have a delay whilst the round or game ends.
     private PlayerManager m_RoundWinner;          // Reference to the winner of the current round.  Used to make an announcement of who won.
     private PlayerManager m_GameWinner;           // Reference to the winner of the game.  Used to make an announcement of who won.
+    public GameObject prefab1, prefab2;
+    Vector3 pos1;
+    Vector3 pos2;
+    public Vector3 center;
+    public Vector3 size;
+    public float trapNumber = 5;
 
+    List<GameObject> spawnedTraps;
 
     private void Start()
     {
         // Create the delays so they only have to be made once.
         m_StartWait = new WaitForSeconds(m_StartDelay);
         m_EndWait = new WaitForSeconds(m_EndDelay);
+        spawnedTraps = new List<GameObject>();
 
         SpawnAllPlayers();
         SetCameraTargets();
@@ -135,6 +143,7 @@ public class GameManager : MonoBehaviour {
     {
         // As soon as the round begins playing let the players control the players.
         EnablePlayerControl();
+        SpawnTraps();
 
         // Clear the text from the screen.
         m_MessageText.text = string.Empty;
@@ -152,6 +161,7 @@ public class GameManager : MonoBehaviour {
     {
         // Stop players from moving.
         DisablePlayerControl();
+        DestroyTraps();
 
         // Clear the winner from the previous round.
         m_RoundWinner = null;
@@ -278,6 +288,25 @@ public class GameManager : MonoBehaviour {
         for (int i = 0; i < m_Players.Length; i++)
         {
             m_Players[i].DisableControl();
+        }
+    }
+
+    public void SpawnTraps()
+    {
+        for (int i = 0; i < trapNumber; i++)
+        {
+            pos1 = center + new Vector3(Random.Range(-size.x, size.x), (float)0.5, Random.Range(-size.z, size.z));
+            pos2 = center + new Vector3(Random.Range(-size.x, size.x), (float)0.5, Random.Range(-size.z, size.z));
+            spawnedTraps.Add(Instantiate(prefab1, pos1, Quaternion.identity));
+            spawnedTraps.Add(Instantiate(prefab2, pos2, Quaternion.identity));
+        }
+    }
+
+    public void DestroyTraps()
+    {
+        for(int i = 0; i < spawnedTraps.Count; i++)
+        {
+            Destroy(spawnedTraps[i]);
         }
     }
 }

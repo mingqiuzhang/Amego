@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RandomlySpawn : MonoBehaviour {
 
-    public GameObject prefab1, prefab2, prefab3, prefab4;
+    public GameObject prefab1, prefab2;
 
     public float spawnRate = 10f;
 
@@ -20,30 +20,17 @@ public class RandomlySpawn : MonoBehaviour {
 
     Vector3 pos2;
 
-    Vector3 pos3;
-
-    Vector4 pos4;
-
     float nextSpawn = 0f;
 
     int whatToSpawn;
 
-    public float spawnedNumber = 6;
-    public float trapNumber = 5;
+    public float weaponsNumber = 6;
 
     float temp;
     private void Start()
     {
         m_StartWait = new WaitForSeconds(m_StartDelay);
-        temp = spawnedNumber;
-
-        for (int i = 0; i < trapNumber; i++)
-        {
-            pos3 = center + new Vector3(Random.Range(-size.x, size.x), (float) 0.5, Random.Range(-size.z, size.z));
-            pos4 = center + new Vector3(Random.Range(-size.x, size.x), (float) 0.5, Random.Range(-size.z, size.z));
-            Instantiate(prefab3, pos3, Quaternion.identity);
-            Instantiate(prefab4, pos4, Quaternion.identity);
-        }
+        temp = weaponsNumber;
 
     }
 
@@ -73,7 +60,7 @@ public class RandomlySpawn : MonoBehaviour {
                     break;
             }
             nextSpawn = Time.time + spawnRate;
-            temp = spawnedNumber;
+            temp = weaponsNumber;
         }
     }
 }
