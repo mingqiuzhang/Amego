@@ -119,7 +119,6 @@ public class GameManager : MonoBehaviour {
         // As soon as the round starts reset the players and make sure they can't move.
         ResetAllPlayers();
         DisablePlayerControl();
-
         // Snap the camera's zoom and position to something appropriate for the reset players.
         m_CameraControl.SetStartPositionAndSize();
 

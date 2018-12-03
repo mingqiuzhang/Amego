@@ -15,12 +15,14 @@ public class PlayerManager
     private CharacterMovement_Physics m_Movement;                        // Used to disable and enable control.
     private Weapon_Projectile m_Shooting;                        // Used to disable and enable control.
     private GameObject m_CanvasGameObject;                  // Used to disable the world space UI during the Starting and Ending phases of each round.
+    private EquipedWeaponSwitch m_Weapon;
 
     public void Setup()
     {
         // Get references to the components.
         m_Movement = m_Instance.GetComponent<CharacterMovement_Physics>();
         m_Shooting = m_Instance.GetComponent<Weapon_Projectile>();
+        m_Weapon = m_Instance.GetComponent<EquipedWeaponSwitch>();
         //m_CanvasGameObject = m_Instance.GetComponentInChildren<Canvas>().gameObject;
 
         // Set the player numbers to be consistent across the scripts.
@@ -51,6 +53,10 @@ public class PlayerManager
     {
         m_Movement.enabled = false;
         m_Shooting.enabled = false;
+        foreach(GameObject i in m_Weapon.current)
+        {
+            i.SetActive(false);
+        }
 
         //m_CanvasGameObject.SetActive(false);
     }
