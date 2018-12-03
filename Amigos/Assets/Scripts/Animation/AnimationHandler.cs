@@ -46,6 +46,9 @@ public class AnimationHandler : MonoBehaviour {
             case EquipedWeaponSwitch.CurrentWeapon.axe:
                 _playerAnimator.SetBool("bAxeAttack", true);
                 break;
+            case EquipedWeaponSwitch.CurrentWeapon.staff:
+                _playerAnimator.SetTrigger("tStaffAttack");
+                break;
         }
     }
 	public void SetAnimatorVelocity(float i_velocity)

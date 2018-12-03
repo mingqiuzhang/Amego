@@ -13,6 +13,7 @@ TagManager:
   - GroundWeapon
   - Trap
   - sword
+  - staff
   layers:
   - Default
   - TransparentFX

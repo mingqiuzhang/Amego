@@ -21,11 +21,10 @@ public class EquipedWeaponSwitch : MonoBehaviour
 
     void OnTriggerEnter(Collider _collider)
     {
-        if (_collider.gameObject.tag == "sword" || _collider.gameObject.tag == "bow")
+        if (_collider.gameObject.tag == "sword" || _collider.gameObject.tag == "bow" || _collider.tag == "staff")
         {
             foreach (GameObject i in current)
             {
-
                 if (i.name != _collider.gameObject.tag)
                 {
                     i.SetActive(false);
