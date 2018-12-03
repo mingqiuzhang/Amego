@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class AnimationHandler : MonoBehaviour {
+
+    public AudioClip sword_attack;
+    public AudioClip bow_attack;
     private Animator _playerAnimator;
     private CharacterMovement_Physics _character;
-
+    private AudioSource _source;
     Transform _sword;
     Collider _collider_of_sword;
     // Use this for initialization
@@ -15,11 +18,18 @@ public class AnimationHandler : MonoBehaviour {
         _sword = this.transform.GetChild(2).GetChild(2);
         _collider_of_sword = _sword.GetComponent<Collider>();
         _collider_of_sword.enabled = false;
+       
+    }
+
+    void Awake()
+    {
+        _source = this.GetComponent<AudioSource>();
     }
 
     private void StartSwordAttack()
     {
         _collider_of_sword.enabled = true;
+        _source.PlayOneShot(sword_attack, (float)0.5);
     }
 
     private void EndSwordAttack()
@@ -29,6 +39,7 @@ public class AnimationHandler : MonoBehaviour {
 
     private void FireArrow()
     {
+        _source.PlayOneShot(bow_attack, (float)0.5);
         _character.primaryAttack.Fire(_character.attackPoint);
         //primaryAttack.Fire(attackPoint);
     }

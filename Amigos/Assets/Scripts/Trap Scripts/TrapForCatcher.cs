@@ -7,7 +7,7 @@ public class TrapForCatcher : MonoBehaviour {
     float timer = 0.0f;
     bool timeStarted = false;
     int seconds;
-
+    public AudioClip catcher_trigger_sound;
     //Set A Private Collider As The Collider We Want To Control
     private Collider current_collision;
     private Rigidbody current_rigi;
@@ -65,6 +65,8 @@ public class TrapForCatcher : MonoBehaviour {
 
             //Start The Timer, Once 3 Seconds Has Passed The Player Could Move Again. Players Will Be Freezed If They Step On A Catcher
             timeStarted = true;
+
+            other.GetComponent<AudioSource>().PlayOneShot(catcher_trigger_sound, (float)0.7);
         }
 
         animator.SetTrigger("tActivate");

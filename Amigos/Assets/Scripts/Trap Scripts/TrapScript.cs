@@ -7,7 +7,7 @@ public class TrapScript : MonoBehaviour {
     float timer = 0.0f;
     bool timeStarted = false;
     float seconds;
-
+    public AudioClip slip_sound;
     //Set A Private Collider As The Collider We Want To Control
     private Collider current_collision;
 
@@ -34,8 +34,6 @@ public class TrapScript : MonoBehaviour {
                 timer = 0.0f;
             }
         }
-
-
 	}
 
 
@@ -51,6 +49,8 @@ public class TrapScript : MonoBehaviour {
             other.GetComponent<Animator>().SetTrigger("tSlip");
             //Start The Timer, Once 3 Seconds Has Passed The Player Could Move Again. Players Will Slide If They Moved Onto A Banana.
             timeStarted = true;
+
+            other.GetComponent<AudioSource>().PlayOneShot(slip_sound, (float)0.7);
         }
 
     }
