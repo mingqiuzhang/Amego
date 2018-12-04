@@ -51,6 +51,12 @@ public class GameManager : MonoBehaviour {
 
     List<GameObject> spawnedTraps;
 
+    private void Awake()
+    {
+        bgm_control = this.GetComponent<AudioSource>();
+
+    }
+
     private void Start()
     {
         // Create the delays so they only have to be made once.
@@ -138,7 +144,8 @@ public class GameManager : MonoBehaviour {
         // Increment the round number and display text showing the players what round it is.
         m_RoundNumber++;
         m_MessageText.text = "ROUND " + m_RoundNumber;
-
+        bgm_control.clip = _original_bgm;
+        bgm_control.Play();
         // Wait for the specified length of time until yielding control back to the game loop.
         yield return m_StartWait;
     }
