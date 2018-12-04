@@ -956,7 +956,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1673252406019526
 GameObject:
   m_ObjectHideFlags: 1
@@ -1050,7 +1050,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1702108986634098
 GameObject:
   m_ObjectHideFlags: 1
@@ -3295,6 +3295,7 @@ MonoBehaviour:
   - {fileID: 1458334951337312}
   - {fileID: 1696982499372086}
   got_weapon: {fileID: 8300000, guid: 7f6ca0854e25ea14bbc4a71fbcb6493c, type: 3}
+  weapon: 0
 --- !u!114 &114297003452272290
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3324,6 +3325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current: []
   got_weapon: {fileID: 0}
+  weapon: 0
 --- !u!114 &114328591369716756
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3368,7 +3370,7 @@ MonoBehaviour:
   maxSpeed: 5
   acceleration: 50
   aimType: 0
-  angularSpeed: 5
+  angularSpeed: 20
   MainCamera: {fileID: 0}
   primaryAttack: {fileID: 114297003452272290}
   attackPoint: {fileID: 4111951786994546}

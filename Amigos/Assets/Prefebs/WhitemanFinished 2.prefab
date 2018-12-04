@@ -200,7 +200,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1126517888262860
 GameObject:
   m_ObjectHideFlags: 1
@@ -1984,7 +1984,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1098938383144636}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.3573785, y: 0.020004272, z: -3.0361817}
+  m_LocalPosition: {x: -11.18969, y: 0.020004272, z: -4.3416467}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4465265454205904}
@@ -3294,6 +3294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current: []
   got_weapon: {fileID: 0}
+  weapon: 0
 --- !u!114 &114348167930581178
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3315,7 +3316,7 @@ MonoBehaviour:
   maxSpeed: 5
   acceleration: 50
   aimType: 0
-  angularSpeed: 5
+  angularSpeed: 20
   MainCamera: {fileID: 0}
   primaryAttack: {fileID: 114444550327198784}
   attackPoint: {fileID: 4564196240398020}
@@ -3362,6 +3363,7 @@ MonoBehaviour:
   - {fileID: 1371940065980888}
   - {fileID: 1576750070210706}
   got_weapon: {fileID: 8300000, guid: 7f6ca0854e25ea14bbc4a71fbcb6493c, type: 3}
+  weapon: 0
 --- !u!114 &114739698636452264
 MonoBehaviour:
   m_ObjectHideFlags: 1

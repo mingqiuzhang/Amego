@@ -14888,10 +14888,10 @@ MonoBehaviour:
   m_CameraControl: {fileID: 648161616}
   m_MessageText: {fileID: 1529935221}
   m_PlayerPrefab:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1666707596355544, guid: e580dcdd148a6384d99efb82fce6cc84, type: 2}
+  - {fileID: 1098938383144636, guid: f00c384e37b36604289695827ae81974, type: 2}
+  - {fileID: 1885589195425860, guid: e5511bcc7cc317d44983c181fdda43b8, type: 2}
+  - {fileID: 1535091851642944, guid: 854701c2318152b4890c7cce0ac23b89, type: 2}
   m_Players:
   - m_PlayerColor: {r: 1, g: 1, b: 1, a: 0}
     m_SpawnPoint: {fileID: 1380480626}
@@ -18006,6 +18006,10 @@ Prefab:
       propertyPath: m_TranslationOffsets.Array.data[0].y
       value: -0.9999981
       objectReference: {fileID: 0}
+    - target: {fileID: 1535091851642944, guid: 854701c2318152b4890c7cce0ac23b89, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 854701c2318152b4890c7cce0ac23b89, type: 2}
   m_IsPrefabAsset: 0
@@ -18224,6 +18228,10 @@ Prefab:
     - target: {fileID: 4356561608736040, guid: f00c384e37b36604289695827ae81974, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1098938383144636, guid: f00c384e37b36604289695827ae81974, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f00c384e37b36604289695827ae81974, type: 2}
@@ -20266,6 +20274,10 @@ Prefab:
     - target: {fileID: 4773099313181304, guid: e5511bcc7cc317d44983c181fdda43b8, type: 2}
       propertyPath: m_RootOrder
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1885589195425860, guid: e5511bcc7cc317d44983c181fdda43b8, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e5511bcc7cc317d44983c181fdda43b8, type: 2}
@@ -23238,6 +23250,15 @@ Prefab:
     - target: {fileID: 1696982499372086, guid: e580dcdd148a6384d99efb82fce6cc84, type: 2}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1666707596355544, guid: e580dcdd148a6384d99efb82fce6cc84, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114772373179569528, guid: e580dcdd148a6384d99efb82fce6cc84,
+        type: 2}
+      propertyPath: angularSpeed
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e580dcdd148a6384d99efb82fce6cc84, type: 2}

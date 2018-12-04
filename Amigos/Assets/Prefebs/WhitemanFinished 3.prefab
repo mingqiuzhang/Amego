@@ -1397,7 +1397,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1903659614621784
 GameObject:
   m_ObjectHideFlags: 1
@@ -2621,7 +2621,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1885589195425860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.025318, y: 0.020004272, z: -6.5327506}
+  m_LocalPosition: {x: -5.105711, y: 0.020004272, z: -7.2982497}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4549709353519014}
@@ -3295,6 +3295,7 @@ MonoBehaviour:
   - {fileID: 1398841446521142}
   - {fileID: 1863363930816222}
   got_weapon: {fileID: 8300000, guid: 7f6ca0854e25ea14bbc4a71fbcb6493c, type: 3}
+  weapon: 0
 --- !u!114 &114350759197414532
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3308,6 +3309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   current: []
   got_weapon: {fileID: 0}
+  weapon: 0
 --- !u!114 &114461584605356678
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3381,7 +3383,7 @@ MonoBehaviour:
   maxSpeed: 5
   acceleration: 50
   aimType: 0
-  angularSpeed: 5
+  angularSpeed: 20
   MainCamera: {fileID: 0}
   primaryAttack: {fileID: 114548049532528902}
   attackPoint: {fileID: 4842663673998472}
