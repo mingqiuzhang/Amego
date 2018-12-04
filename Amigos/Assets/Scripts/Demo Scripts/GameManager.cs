@@ -122,7 +122,7 @@ public class GameManager : MonoBehaviour {
         if (m_GameWinner != null)
         {
             // If there is a game winner, restart the level.
-            SceneManager.LoadScene("Finished Scene");
+            SceneManager.LoadScene("StartMenu");
         }
         else
         {
