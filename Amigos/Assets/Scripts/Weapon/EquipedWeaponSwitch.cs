@@ -10,7 +10,7 @@ public class EquipedWeaponSwitch : MonoBehaviour
     [HideInInspector]
     public enum CurrentWeapon { bow, sword, axe, staff };
     [HideInInspector]
-    public static CurrentWeapon weapon;
+    public CurrentWeapon weapon;
 
     private Weapon_Projectile _weapon_pro;
     // Use this for initialization
