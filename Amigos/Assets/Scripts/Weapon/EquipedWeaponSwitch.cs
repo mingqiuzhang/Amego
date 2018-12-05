@@ -6,11 +6,11 @@ public class EquipedWeaponSwitch : MonoBehaviour
 {
 
     public GameObject[] current;
-
+    public AudioClip got_weapon;
     [HideInInspector]
     public enum CurrentWeapon { bow, sword, axe, staff };
     [HideInInspector]
-    public static CurrentWeapon weapon;
+    public CurrentWeapon weapon;
 
     private Weapon_Projectile _weapon_pro;
     // Use this for initialization
@@ -53,6 +53,7 @@ public class EquipedWeaponSwitch : MonoBehaviour
                 }
             }
             _collider.gameObject.SetActive(false);
+            this.GetComponent<AudioSource>().PlayOneShot(got_weapon, (float)0.7);
         }
     }
 }

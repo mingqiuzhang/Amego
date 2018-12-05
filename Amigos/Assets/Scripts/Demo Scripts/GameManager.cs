@@ -33,6 +33,9 @@ public class GameManager : MonoBehaviour {
     public GameObject[] m_PlayerPrefab;             // Reference to the prefab the players will control.
     public PlayerManager[] m_Players;               // A collection of managers for enabling and disabling different aspects of the players.
 
+    public AudioClip _original_bgm;
+    public AudioClip _winner;
+    private AudioSource bgm_control;
 
     private int m_RoundNumber;                  // Which round the game is currently on.
     private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts.
@@ -48,6 +51,12 @@ public class GameManager : MonoBehaviour {
 
     List<GameObject> spawnedTraps;
 
+    private void Awake()
+    {
+        bgm_control = this.GetComponent<AudioSource>();
+
+    }
+
     private void Start()
     {
         // Create the delays so they only have to be made once.
@@ -60,6 +69,8 @@ public class GameManager : MonoBehaviour {
 
         // Once the players have been created and the camera is using them as targets, start the game.
         StartCoroutine(GameLoop());
+
+        bgm_control = this.GetComponent<AudioSource>();
     }
 
 
@@ -111,7 +122,7 @@ public class GameManager : MonoBehaviour {
         if (m_GameWinner != null)
         {
             // If there is a game winner, restart the level.
-            Application.LoadLevel(Application.loadedLevel);
+            SceneManager.LoadScene("StartMenu");
         }
         else
         {
@@ -133,7 +144,8 @@ public class GameManager : MonoBehaviour {
         // Increment the round number and display text showing the players what round it is.
         m_RoundNumber++;
         m_MessageText.text = "ROUND " + m_RoundNumber;
-
+        bgm_control.clip = _original_bgm;
+        bgm_control.Play();
         // Wait for the specified length of time until yielding control back to the game loop.
         yield return m_StartWait;
     }
@@ -179,7 +191,8 @@ public class GameManager : MonoBehaviour {
         // Get a message based on the scores and whether or not there is a game winner and display it.
         string message = EndMessage();
         m_MessageText.text = message;
-
+        bgm_control.clip = _winner;
+        bgm_control.Play();
         // Wait for the specified length of time until yielding control back to the game loop.
         yield return m_EndWait;
     }

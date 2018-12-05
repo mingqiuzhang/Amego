@@ -65,6 +65,8 @@ using System.Collections;
 
         private Weapon_Projectile _fire_control_system;
 
+        private EquipedWeaponSwitch _weapon_switch_system;
+
         private void Awake()
         { 
             _rigidbody = this.GetComponent<Rigidbody>();
@@ -80,6 +82,8 @@ using System.Collections;
             if (attackPoint == null) attackPoint = this.transform;
 
             _fire_control_system = this.GetComponent<Weapon_Projectile>();
+
+            _weapon_switch_system = this.GetComponent<EquipedWeaponSwitch>();
         }
 
         private void Update()
@@ -192,7 +196,7 @@ using System.Collections;
 
             if (Input.GetAxis(attackAxis) > 0.5f)
             {
-                if (EquipedWeaponSwitch.weapon == EquipedWeaponSwitch.CurrentWeapon.bow)
+                if (_weapon_switch_system.weapon == EquipedWeaponSwitch.CurrentWeapon.bow)
                 {
                     if (_fire_control_system._canFire == false)
                     {
@@ -200,12 +204,12 @@ using System.Collections;
                     }
                     else
                     {
-                        animationHandler.PlayAttackAnimation(EquipedWeaponSwitch.weapon);
+                        animationHandler.PlayAttackAnimation(_weapon_switch_system.weapon);
                     }
                 }
                 else
                 {
-                    animationHandler.PlayAttackAnimation(EquipedWeaponSwitch.weapon);
+                    animationHandler.PlayAttackAnimation(_weapon_switch_system.weapon);
                 }          
             }
         }

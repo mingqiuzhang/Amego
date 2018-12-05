@@ -181,7 +181,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1464801889897910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.041148, y: 0.020004272, z: 2.1077473}
+  m_LocalPosition: {x: -14.89, y: 0.020004272, z: -10.43}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4041131953665332}
@@ -258,6 +258,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0872c99ab98cd5045b1594786ae8d8e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  catcher_trigger_sound: {fileID: 8300000, guid: 40c5d3dec37442245a9efbcdf1f277db,
+    type: 3}
 --- !u!137 &137513751334806082
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
