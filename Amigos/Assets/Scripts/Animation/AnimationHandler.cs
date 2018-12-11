@@ -9,6 +9,7 @@ public class AnimationHandler : MonoBehaviour {
     private Animator _playerAnimator;
     private CharacterMovement_Physics _character;
     private AudioSource _source;
+    private bool canAttack = true;
     Transform _sword;
     Collider _collider_of_sword;
     // Use this for initialization
@@ -35,12 +36,14 @@ public class AnimationHandler : MonoBehaviour {
     private void EndSwordAttack()
     {
         _collider_of_sword.enabled = false;
+        canAttack = true;
     }
 
     private void FireArrow()
     {
         _source.PlayOneShot(bow_attack, (float)0.5);
         _character.primaryAttack.Fire(_character.attackPoint);
+        canAttack = true;
         //primaryAttack.Fire(attackPoint);
     }
 
@@ -49,10 +52,18 @@ public class AnimationHandler : MonoBehaviour {
         switch (i_weapon)
         {
             case EquipedWeaponSwitch.CurrentWeapon.bow:
-                _playerAnimator.SetTrigger("tBowAttack");
+                if(canAttack == true)
+                {
+                    _playerAnimator.SetTrigger("tBowAttack");
+                    canAttack = false;
+                }
                 break;
             case EquipedWeaponSwitch.CurrentWeapon.sword:
-                _playerAnimator.SetTrigger("tSwordAttack");
+                if(canAttack == true)
+                {
+                    _playerAnimator.SetTrigger("tSwordAttack");
+                    canAttack = false;
+                }
                 break;
             case EquipedWeaponSwitch.CurrentWeapon.axe:
                 _playerAnimator.SetBool("bAxeAttack", true);

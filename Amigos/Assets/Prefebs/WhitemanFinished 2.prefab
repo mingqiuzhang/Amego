@@ -3313,7 +3313,7 @@ MonoBehaviour:
   horizontalThumbstick: Horizontal_Controller2
   verticalThumbstick: Vertical_Controller2
   attackAxis: Fire1_Controller2
-  maxSpeed: 5
+  maxSpeed: 7
   acceleration: 50
   aimType: 0
   angularSpeed: 20

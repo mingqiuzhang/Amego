@@ -205,11 +205,13 @@ using System.Collections;
                     else
                     {
                         animationHandler.PlayAttackAnimation(_weapon_switch_system.weapon);
+                        
                     }
                 }
                 else
                 {
                     animationHandler.PlayAttackAnimation(_weapon_switch_system.weapon);
+                    print("attack");
                 }          
             }
         }
