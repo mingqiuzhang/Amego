@@ -10,7 +10,7 @@ public class PlayerManager
     [HideInInspector] public string m_ColoredPlayerText;    // A string that represents the player with their number colored to match their player.
     [HideInInspector] public GameObject m_Instance;         // A reference to the instance of the player when it is created.
     [HideInInspector] public int m_Wins;                    // The number of wins this player has so far.
-
+    [HideInInspector] public int player_lives;
 
     private CharacterMovement_Physics m_Movement;                        // Used to disable and enable control.
     private Weapon_Projectile m_Shooting;                        // Used to disable and enable control.

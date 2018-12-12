@@ -48,6 +48,7 @@ public class GameManager : MonoBehaviour {
     public Vector3 center;
     public Vector3 size;
     public float trapNumber = 5;
+    public int lives = 3;
 
     List<GameObject> spawnedTraps;
 
@@ -83,7 +84,7 @@ public class GameManager : MonoBehaviour {
             m_Players[i].m_Instance =
                 Instantiate(m_PlayerPrefab[i], m_Players[i].m_SpawnPoint.position, m_Players[i].m_SpawnPoint.rotation) as GameObject;
             m_Players[i].m_PlayerNumber = i + 1;
-
+            m_Players[i].player_lives = lives;
             m_Players[i].Setup();
         }
     }
@@ -160,8 +161,16 @@ public class GameManager : MonoBehaviour {
         // Clear the text from the screen.
         m_MessageText.text = string.Empty;
 
-        // While there is not one player left...
-        while (!OnePlayerLeft())
+        for (int i = 0; i < m_Players.Length; i++)
+        {
+            if(m_Players[i].activeSelf == false && m_Players[i].lives >= 1)
+            {
+                m_Players[i].lives--;
+                m_Players[i].Reset();
+            }
+        }
+            // While there is not one player left...
+            while (!OnePlayerLeft())
         {
             // ... return on the next frame.
             yield return null;

@@ -6,6 +6,7 @@ public class InstantDead : MonoBehaviour {
 
     public GameObject character;
     private bool _canDealDamage = false;
+    [HideInInspector] public int player_lives = 3;
 
 	// Use this for initialization
 	void Start () {
@@ -22,11 +23,13 @@ public class InstantDead : MonoBehaviour {
         if ((collision.gameObject.tag == "weapon"))
         {
             character.SetActive(false);
+            player_lives--;
         }
         if ((collision.gameObject.tag == "arrow"))
         {
             character.SetActive(false);
             collision.gameObject.SetActive(false);
+            player_lives--;
         }
     }
 }
