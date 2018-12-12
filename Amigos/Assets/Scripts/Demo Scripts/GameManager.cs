@@ -163,9 +163,9 @@ public class GameManager : MonoBehaviour {
 
         for (int i = 0; i < m_Players.Length; i++)
         {
-            if(m_Players[i].activeSelf == false && m_Players[i].lives >= 1)
+            if(m_Players[i].m_Instance.activeSelf == false && m_Players[i].player_lives >= 1)
             {
-                m_Players[i].lives--;
+                m_Players[i].player_lives--;
                 m_Players[i].Reset();
             }
         }
