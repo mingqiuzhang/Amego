@@ -172,7 +172,7 @@ public class GameManager : MonoBehaviour {
                 {
                     m_Players[i].player_lives--;
                     m_RespawnWait = new WaitForSeconds(m_RespawnDelay);
-                    m_Players[i].Reset();
+                    //m_Players[i].Reset();
                 }
             }
             yield return null;

@@ -15152,6 +15152,7 @@ MonoBehaviour:
   m_NumRoundsToWin: 3
   m_StartDelay: 5
   m_EndDelay: 3
+  m_RespawnDelay: 3
   m_CameraControl: {fileID: 648161616}
   m_MessageText: {fileID: 1529935221}
   m_PlayerPrefab:

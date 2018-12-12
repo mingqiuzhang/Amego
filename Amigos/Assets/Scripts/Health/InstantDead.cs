@@ -27,6 +27,7 @@ public class InstantDead : MonoBehaviour {
         {
             character.SetActive(false);
             collision.gameObject.SetActive(false);
+            print("Arrow Hit");
         }
     }
 }
