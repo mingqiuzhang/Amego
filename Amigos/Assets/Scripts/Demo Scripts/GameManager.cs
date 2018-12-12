@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour {
     public int m_NumRoundsToWin = 5;            // The number of rounds a single player has to win to win the game.
     public float m_StartDelay = 3f;             // The delay between the start of RoundStarting and RoundPlaying phases.
     public float m_EndDelay = 3f;               // The delay between the end of RoundPlaying and RoundEnding phases.
+    public float m_RespawnDelay = 3f;
     public CameraControl m_CameraControl;       // Reference to the CameraControl script for control during different phases.
     public Text m_MessageText;                  // Reference to the overlay Text to display winning text, etc.
     public GameObject[] m_PlayerPrefab;             // Reference to the prefab the players will control.
@@ -40,6 +41,7 @@ public class GameManager : MonoBehaviour {
     private int m_RoundNumber;                  // Which round the game is currently on.
     private WaitForSeconds m_StartWait;         // Used to have a delay whilst the round starts.
     private WaitForSeconds m_EndWait;           // Used to have a delay whilst the round or game ends.
+    private WaitForSeconds m_RespawnWait;
     private PlayerManager m_RoundWinner;          // Reference to the winner of the current round.  Used to make an announcement of who won.
     private PlayerManager m_GameWinner;           // Reference to the winner of the game.  Used to make an announcement of who won.
     public GameObject prefab1, prefab2;
@@ -160,15 +162,6 @@ public class GameManager : MonoBehaviour {
 
         // Clear the text from the screen.
         m_MessageText.text = string.Empty;
-
-        for (int i = 0; i < m_Players.Length; i++)
-        {
-            if(m_Players[i].m_Instance.activeSelf == false && m_Players[i].player_lives >= 1)
-            {
-                m_Players[i].player_lives--;
-                m_Players[i].Reset();
-            }
-        }
             // While there is not one player left...
             while (!OnePlayerLeft())
         {
@@ -178,6 +171,7 @@ public class GameManager : MonoBehaviour {
                 if (m_Players[i].m_Instance.activeSelf == false && m_Players[i].player_lives >= 1)
                 {
                     m_Players[i].player_lives--;
+                    m_RespawnWait = new WaitForSeconds(m_RespawnDelay);
                     m_Players[i].Reset();
                 }
             }
