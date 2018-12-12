@@ -173,6 +173,14 @@ public class GameManager : MonoBehaviour {
             while (!OnePlayerLeft())
         {
             // ... return on the next frame.
+            for (int i = 0; i < m_Players.Length; i++)
+            {
+                if (m_Players[i].m_Instance.activeSelf == false && m_Players[i].player_lives >= 1)
+                {
+                    m_Players[i].player_lives--;
+                    m_Players[i].Reset();
+                }
+            }
             yield return null;
         }
     }
