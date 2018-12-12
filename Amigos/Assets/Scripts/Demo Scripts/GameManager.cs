@@ -50,7 +50,7 @@ public class GameManager : MonoBehaviour {
     public Vector3 center;
     public Vector3 size;
     public float trapNumber = 5;
-    public int lives = 3;
+    public int extraLives = 2;
 
     List<GameObject> spawnedTraps;
 
@@ -65,6 +65,7 @@ public class GameManager : MonoBehaviour {
         // Create the delays so they only have to be made once.
         m_StartWait = new WaitForSeconds(m_StartDelay);
         m_EndWait = new WaitForSeconds(m_EndDelay);
+        m_RespawnWait = new WaitForSeconds(m_RespawnDelay);
         spawnedTraps = new List<GameObject>();
 
         SpawnAllPlayers();
@@ -86,7 +87,7 @@ public class GameManager : MonoBehaviour {
             m_Players[i].m_Instance =
                 Instantiate(m_PlayerPrefab[i], m_Players[i].m_SpawnPoint.position, m_Players[i].m_SpawnPoint.rotation) as GameObject;
             m_Players[i].m_PlayerNumber = i + 1;
-            m_Players[i].player_lives = lives;
+            m_Players[i].player_lives = extraLives;
             m_Players[i].Setup();
         }
     }
@@ -166,15 +167,8 @@ public class GameManager : MonoBehaviour {
             while (!OnePlayerLeft())
         {
             // ... return on the next frame.
-            for (int i = 0; i < m_Players.Length; i++)
-            {
-                if (m_Players[i].m_Instance.activeSelf == false && m_Players[i].player_lives >= 1)
-                {
-                    m_Players[i].player_lives--;
-                    m_RespawnWait = new WaitForSeconds(m_RespawnDelay);
-                    //m_Players[i].Reset();
-                }
-            }
+            
+            StartCoroutine(RespawnDelay());
             yield return null;
         }
     }
@@ -331,6 +325,20 @@ public class GameManager : MonoBehaviour {
         for(int i = 0; i < spawnedTraps.Count; i++)
         {
             Destroy(spawnedTraps[i]);
+        }
+    }
+
+    IEnumerator RespawnDelay()
+    {
+        for (int i = 0; i < m_Players.Length; i++)
+        {
+            if (m_Players[i].m_Instance.activeSelf == false && m_Players[i].player_lives >= 1)
+            {
+                int currentLife = m_Players[i].player_lives;
+                yield return m_RespawnWait;
+                m_Players[i].Reset();
+                m_Players[i].player_lives = currentLife - 1;
+            }
         }
     }
 }
