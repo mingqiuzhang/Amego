@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class RandomlySpawn : MonoBehaviour {
 
-    public GameObject prefab1, prefab2;
+    public GameObject prefab1, prefab2,prefab3,prefab4;
 
-    public float spawnRate = 10f;
+    public float SpawnRate = 10f;
+    public float trapSpawnRate = 10f;
 
     public Vector3 center;
 
@@ -20,47 +21,90 @@ public class RandomlySpawn : MonoBehaviour {
 
     Vector3 pos2;
 
+    Vector3 pos3;
+
+    Vector3 pos4;
+
     float nextSpawn = 0f;
 
     int whatToSpawn;
 
     public float weaponsNumber = 6;
+    public float trapNumber = 6;
 
     float temp;
+    float temp2;
     private void Start()
     {
         m_StartWait = new WaitForSeconds(m_StartDelay);
-        temp = weaponsNumber;
-
     }
 
     // Update is called once per frame
     void Update () {
+        temp = weaponsNumber;
+        temp2 = trapNumber;
         RandomSpawn();
 	}
 
     public void RandomSpawn()
     {
-        pos1 = center + new Vector3(Random.Range(-size.x, size.x), 2, Random.Range(-size.z, size.z));
-        pos2 = center + new Vector3(Random.Range(-size.x, size.x), 2, Random.Range(-size.z, size.z)); 
-        
+        pos1 = center + new Vector3(Random.Range(-size.x, size.x), 2, Random.Range(-size.z + 5, size.z));
+        pos2 = center + new Vector3(Random.Range(-size.x, size.x), 2, Random.Range(-size.z + 5, size.z));
+        pos3 = center + new Vector3(Random.Range(-size.x, size.x), 0, Random.Range(-size.z + 5, size.z));
+        pos4 = center + new Vector3(Random.Range(-size.x, size.x), 0, Random.Range(-size.z + 5, size.z));
 
         if (Time.time > nextSpawn && temp != 0)
         {
-            whatToSpawn = Random.Range(1, 2);
-            switch (whatToSpawn)
+            whatToSpawn = Random.Range(1, 4);
+            if (whatToSpawn == 1)
             {
-                case 1:
-                    Instantiate(prefab1, pos1, Quaternion.identity);
-                    temp--;
-                    break;
-                case 2:
-                    Instantiate(prefab2, pos2, Quaternion.identity);
-                    temp--;
-                    break;
+                Instantiate(prefab1, pos2, Quaternion.identity);
+                temp--;
             }
-            nextSpawn = Time.time + spawnRate;
+            else if (whatToSpawn == 2)
+            {
+                Instantiate(prefab2, pos2, Quaternion.identity);
+                temp--;
+            }
+            else if (whatToSpawn == 3)
+            {
+                Instantiate(prefab1, pos1, Quaternion.identity);
+                temp--;
+            }
+            else
+            {
+                Instantiate(prefab2, pos2, Quaternion.identity);
+                temp--;
+            }
+            nextSpawn = Time.time + SpawnRate;
             temp = weaponsNumber;
+        }
+
+        if (Time.time > nextSpawn && temp2 != 0)
+        {
+            whatToSpawn = Random.Range(1, 4);
+            if(whatToSpawn == 1)
+            {
+                Instantiate(prefab3, pos3, Quaternion.identity);
+                temp2--;
+            }
+            else if(whatToSpawn == 2)
+            {
+                Instantiate(prefab4, pos4, Quaternion.identity);
+                temp2--;
+            }
+            else if(whatToSpawn == 3)
+            {
+                Instantiate(prefab3, pos3, Quaternion.identity);
+                temp2--;
+            }
+            else
+            {
+                Instantiate(prefab4, pos4, Quaternion.identity);
+                temp2--;
+            }
+            nextSpawn = Time.time + trapSpawnRate;
+            temp2 = trapNumber;
         }
     }
 }

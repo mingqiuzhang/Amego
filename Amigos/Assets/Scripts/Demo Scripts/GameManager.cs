@@ -313,8 +313,8 @@ public class GameManager : MonoBehaviour {
     {
         for (int i = 0; i < trapNumber; i++)
         {
-            pos1 = center + new Vector3(Random.Range(-size.x, size.x), (float)0.5, Random.Range(-size.z, size.z));
-            pos2 = center + new Vector3(Random.Range(-size.x, size.x), (float)0.5, Random.Range(-size.z, size.z));
+            pos1 = center + new Vector3(Random.Range(-size.x, size.x), (float)0.5, Random.Range(-size.z + 10, size.z));
+            pos2 = center + new Vector3(Random.Range(-size.x, size.x), (float)0.5, Random.Range(-size.z + 10, size.z));
             spawnedTraps.Add(Instantiate(prefab1, pos1, Quaternion.identity));
             spawnedTraps.Add(Instantiate(prefab2, pos2, Quaternion.identity));
         }
