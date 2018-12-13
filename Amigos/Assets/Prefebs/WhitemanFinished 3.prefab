@@ -1388,6 +1388,7 @@ GameObject:
   - component: {fileID: 114548049532528902}
   - component: {fileID: 114326284811240640}
   - component: {fileID: 114513825812408542}
+  - component: {fileID: 114372734349344742}
   - component: {fileID: 114305152061054302}
   - component: {fileID: 23107804973537494}
   - component: {fileID: 82359650749342328}
@@ -3310,6 +3311,17 @@ MonoBehaviour:
   current: []
   got_weapon: {fileID: 0}
   weapon: 0
+--- !u!114 &114372734349344742
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1885589195425860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00f19005516269347b9e0a555655b4af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114461584605356678
 MonoBehaviour:
   m_ObjectHideFlags: 1

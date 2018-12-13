@@ -167,7 +167,6 @@ public class GameManager : MonoBehaviour {
             while (!OnePlayerLeft())
         {
             // ... return on the next frame.
-            
             StartCoroutine(RespawnDelay());
             yield return null;
         }
@@ -207,18 +206,18 @@ public class GameManager : MonoBehaviour {
     private bool OnePlayerLeft()
     {
         // Start the count of players left at zero.
-        int numPlayersLeft = 0;
+        int deathPlayers = 0;
 
         // Go through all the players...
         for (int i = 0; i < m_Players.Length; i++)
         {
             // ... and if they are active, increment the counter.
-            if (m_Players[i].m_Instance.activeSelf)
-                numPlayersLeft++;
+            if (m_Players[i].m_Instance.activeSelf != true && m_Players[i].player_lives == 0)
+                deathPlayers++;
         }
 
         // If there are one or fewer players remaining return true, otherwise return false.
-        return numPlayersLeft <= 1;
+        return deathPlayers == 3;
     }
 
 
@@ -288,6 +287,7 @@ public class GameManager : MonoBehaviour {
         for (int i = 0; i < m_Players.Length; i++)
         {
             m_Players[i].Reset();
+            m_Players[i].player_lives = extraLives;
         }
     }
 
