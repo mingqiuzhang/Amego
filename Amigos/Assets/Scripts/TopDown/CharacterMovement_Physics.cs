@@ -46,7 +46,7 @@ using System.Collections;
 
         //Private Memeber Variables
         private Rigidbody _rigidbody;
-        private Vector3 _characterVelocity = Vector3.zero;
+        public Vector3 _characterVelocity = Vector3.zero;
         private Vector3 _thumbstickVector = Vector3.zero;
 
         private bool _canMove = true;

@@ -15,6 +15,7 @@ TagManager:
   - sword
   - staff
   - banana
+  - axe
   layers:
   - Default
   - TransparentFX

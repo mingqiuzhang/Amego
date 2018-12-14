@@ -12,6 +12,11 @@ public class AnimationHandler : MonoBehaviour {
     private bool canAttack = true;
     Transform _sword;
     Collider _collider_of_sword;
+
+    public float axeAttackTime = 2f;
+    private float axeAttackCounter;
+
+    private bool axeAttacking = false;
     // Use this for initialization
     void Start () {
         _playerAnimator = this.GetComponent<Animator>();
@@ -19,7 +24,7 @@ public class AnimationHandler : MonoBehaviour {
         _sword = this.transform.GetChild(2).GetChild(2);
         _collider_of_sword = _sword.GetComponent<Collider>();
         _collider_of_sword.enabled = false;
-       
+        axeAttackCounter = axeAttackTime;
     }
 
     void Awake()
@@ -66,7 +71,10 @@ public class AnimationHandler : MonoBehaviour {
                 }
                 break;
             case EquipedWeaponSwitch.CurrentWeapon.axe:
+                _character._characterVelocity = new Vector3(0, 0, 0);
                 _playerAnimator.SetBool("bAxeAttack", true);
+                _playerAnimator.applyRootMotion = true;
+                axeAttacking = true;
                 break;
             case EquipedWeaponSwitch.CurrentWeapon.staff:
                 _playerAnimator.SetTrigger("tStaffAttack");
@@ -76,5 +84,22 @@ public class AnimationHandler : MonoBehaviour {
 	public void SetAnimatorVelocity(float i_velocity)
     {
         _playerAnimator.SetFloat("fVelocity", i_velocity);
+    }
+
+    private void Update()
+    {
+        if (axeAttacking)
+        {
+            _character.set_canMove(false);
+            axeAttackCounter -= Time.deltaTime;
+            if(axeAttackCounter < 0)
+            {
+                axeAttacking = false;
+                _character.set_canMove(true);
+                _playerAnimator.SetBool("bAxeAttack", false);
+                axeAttackCounter = axeAttackTime;
+                _playerAnimator.applyRootMotion = false;
+            }
+        }
     }
 }

@@ -5,14 +5,19 @@ using UnityEngine;
 public class InstantDead : MonoBehaviour {
 
     public GameObject character;
+    private Animator _playerAnimator;
     private bool _canDealDamage = false;
     float seconds;
     bool timeStarted = false;
     float timer = 0.0f;
+    public float despawnTime = 5f;
+    private float despawnCounter;
+    private bool playerDead;
     // Use this for initialization
     void Start () {
-		
-	}
+        despawnCounter = despawnTime;
+        _playerAnimator = GetComponent<Animator>();
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -32,19 +37,25 @@ public class InstantDead : MonoBehaviour {
                 timer = 0.0f;
             }
         }
+
+        if (playerDead)
+        {
+            despawnCounter -= Time.deltaTime;
+            if(despawnCounter < 0)
+            {
+                character.SetActive(false);
+                despawnCounter = despawnTime;
+                playerDead = false;
+            }
+        }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if ((collision.gameObject.tag == "weapon"))
+        if ((collision.gameObject.tag == "weapon") || (collision.gameObject.tag == "arrow"))
         {
-            character.SetActive(false);
-        }
-        if ((collision.gameObject.tag == "arrow"))
-        {
-            character.SetActive(false);
-            collision.gameObject.SetActive(false);
-            print("Arrow Hit");
+            _playerAnimator.SetTrigger("tDeath");
+            playerDead = true;
         }
 
     }
