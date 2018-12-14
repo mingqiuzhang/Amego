@@ -3309,11 +3309,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
   m_TurnSpeed: 180
-  horizontalAxis: Horizontal_Controller2
-  verticalAxis: Vertical_Controller2
-  horizontalThumbstick: Horizontal_Controller2
-  verticalThumbstick: Vertical_Controller2
-  attackAxis: Fire1_Controller2
+  horizontalAxis: Horizontal_Controller1
+  verticalAxis: Vertical_Controller1
+  horizontalThumbstick: Horizontal_Controller1
+  verticalThumbstick: Vertical_Controller1
+  attackAxis: Fire1_Controller1
   maxSpeed: 7
   acceleration: 50
   aimType: 0
