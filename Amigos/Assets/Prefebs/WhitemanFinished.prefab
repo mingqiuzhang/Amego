@@ -117,7 +117,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1094341954646300
 GameObject:
   m_ObjectHideFlags: 1
@@ -1025,7 +1025,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1673252406019526
 GameObject:
   m_ObjectHideFlags: 1
@@ -1135,7 +1135,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1702108986634098
 GameObject:
   m_ObjectHideFlags: 1
@@ -1920,8 +1920,8 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1696982499372086}
-  m_LocalRotation: {x: 0.45075336, y: -0.60375774, z: -0.45090136, w: 0.47852477}
-  m_LocalPosition: {x: -1.9260585, y: 2.5358398, z: 1.1556091}
+  m_LocalRotation: {x: 0.45075303, y: -0.603758, z: -0.4509015, w: 0.47852466}
+  m_LocalPosition: {x: -2.05, y: 2.5499995, z: 1.1399996}
   m_LocalScale: {x: 7.529408, y: 7.529404, z: 7.5294}
   m_Children:
   - {fileID: 4729051155195434}
@@ -3431,11 +3431,11 @@ BoxCollider:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1093148465621684}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 7.26, z: 1}
-  m_Center: {x: 0, y: -2.02, z: 0}
+  m_Size: {x: 1, y: 3, z: 2}
+  m_Center: {x: 0, y: 1, z: 1}
 --- !u!65 &65949135959758894
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3446,8 +3446,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.05343362, y: 0.30000007, z: 0.069999985}
-  m_Center: {x: -0.0017169468, y: 0.05, z: -0.01}
+  m_Size: {x: 0.05, y: 0.3, z: 0.05}
+  m_Center: {x: -0.0017169468, y: 0.12, z: 0.03}
 --- !u!82 &82900501365144572
 AudioSource:
   m_ObjectHideFlags: 1
@@ -3911,12 +3911,12 @@ ParentConstraint:
   m_GameObject: {fileID: 1696982499372086}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: -1.9260585, y: 2.5358398, z: 1.1556091}
-  m_RotationAtRest: {x: -6.492728, y: -97.832535, z: -79.15073}
+  m_TranslationAtRest: {x: -2.05, y: 2.5499995, z: 1.1399996}
+  m_RotationAtRest: {x: -6.4927764, y: -97.832535, z: -79.150696}
   m_TranslationOffsets:
-  - {x: 0.5, y: -0.99999994, z: 0.10000086}
+  - {x: 0.61949587, y: -0.962507, z: 0.08901763}
   m_RotationOffsets:
-  - {x: -18.000011, y: 95.30006, z: -171}
+  - {x: -18.00001, y: 95.3001, z: -171}
   m_AffectTranslationX: 1
   m_AffectTranslationY: 1
   m_AffectTranslationZ: 1
