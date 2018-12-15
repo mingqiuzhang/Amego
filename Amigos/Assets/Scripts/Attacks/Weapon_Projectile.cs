@@ -28,14 +28,15 @@ public class Weapon_Projectile : Weapon {
             _canFire = false;
         }
 
-        else if (_collision.gameObject.tag == "bow")
+        else if (_collision.gameObject.tag == "bow" || _collision.gameObject.tag == "staff")
         {
             _canFire = true;
             uses = 3;
             print(uses);
         }
     }
-    public Object projectilePrefab; 
+    public Object projectilePrefab;
+    public Object _Magic_Rod_Ice;
 
     public float fireRate = 0.25f;
 
@@ -49,13 +50,26 @@ public class Weapon_Projectile : Weapon {
         if (!_canFire) return;
 
         GameObject projectile = (GameObject)Instantiate(projectilePrefab, attackSpawnPoint.position, attackSpawnPoint.rotation, null);
-
+        projectile.GetComponent<Rigidbody>().velocity = projectile.transform.forward * 12;
         _canFire = false;
 
         StartCoroutine(AttackCooldown());
 
         uses--;
-        print(uses);
+    }
+
+    public override void Fire_Ice(Transform attackSpawnPoint)
+    {
+
+        if (!_canFire) return;
+
+        GameObject projectile = (GameObject)Instantiate(_Magic_Rod_Ice, attackSpawnPoint.position, attackSpawnPoint.rotation, null);
+        projectile.GetComponent<Rigidbody>().velocity = projectile.transform.forward * 12;
+        _canFire = false;
+
+        StartCoroutine(AttackCooldown());
+
+        uses--;
     }
 
     public IEnumerator AttackCooldown ()

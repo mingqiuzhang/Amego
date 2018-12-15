@@ -1,16 +1,56 @@
 fileFormatVersion: 2
-guid: a12be181b313b104593d574798d498dd
+guid: 915b0d3b212e9874491e22c104c8ea49
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    100000: polySurface1
-    100002: //RootNode
-    400000: polySurface1
-    400002: //RootNode
-    2100000: polySurface1Mat
-    2300000: polySurface1
-    3300000: polySurface1
-    4300000: polySurface1
+    100000: //RootNode
+    100002: pCone1
+    100004: pCone2
+    100006: pCone3
+    100008: pCone4
+    100010: pCone5
+    100012: pCone6
+    100014: pCone7
+    100016: pCone8
+    100018: pCone9
+    400000: //RootNode
+    400002: pCone1
+    400004: pCone2
+    400006: pCone3
+    400008: pCone4
+    400010: pCone5
+    400012: pCone6
+    400014: pCone7
+    400016: pCone8
+    400018: pCone9
+    2100000: blinn1
+    2300000: pCone1
+    2300002: pCone2
+    2300004: pCone3
+    2300006: pCone4
+    2300008: pCone5
+    2300010: pCone6
+    2300012: pCone7
+    2300014: pCone8
+    2300016: pCone9
+    3300000: pCone1
+    3300002: pCone2
+    3300004: pCone3
+    3300006: pCone4
+    3300008: pCone5
+    3300010: pCone6
+    3300012: pCone7
+    3300014: pCone8
+    3300016: pCone9
+    4300000: pCone1
+    4300002: pCone2
+    4300004: pCone3
+    4300006: pCone4
+    4300008: pCone5
+    4300010: pCone6
+    4300012: pCone7
+    4300014: pCone8
+    4300016: pCone9
   externalObjects: {}
   materials:
     importMaterials: 1

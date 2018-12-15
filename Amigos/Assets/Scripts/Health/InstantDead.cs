@@ -5,6 +5,8 @@ using UnityEngine;
 public class InstantDead : MonoBehaviour {
 
     public GameObject character;
+    public AudioClip _death_sound;
+    private AudioSource _source;
     private Animator _playerAnimator;
     private bool _canDealDamage = false;
     float seconds;
@@ -18,9 +20,13 @@ public class InstantDead : MonoBehaviour {
         despawnCounter = despawnTime;
         _playerAnimator = GetComponent<Animator>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    void Awake()
+    {
+        _source = this.GetComponent<AudioSource>();
+    }
+    // Update is called once per frame
+    void Update () {
 
         //Start Timer
         if (timeStarted == true)
@@ -40,8 +46,10 @@ public class InstantDead : MonoBehaviour {
 
         if (playerDead)
         {
+            character.GetComponent<Rigidbody>().isKinematic = true;
+            character.GetComponent<CharacterMovement_Physics>().set_canAim(false);
             despawnCounter -= Time.deltaTime;
-            if(despawnCounter < 0)
+            if (despawnCounter < 0)
             {
                 character.SetActive(false);
                 despawnCounter = despawnTime;
@@ -50,12 +58,21 @@ public class InstantDead : MonoBehaviour {
         }
     }
 
+    private void PlayerDead()
+    {
+        _source.PlayOneShot(_death_sound, (float)0.5);
+    }
     private void OnCollisionEnter(Collision collision)
     {
         if ((collision.gameObject.tag == "weapon") || (collision.gameObject.tag == "arrow"))
         {
             _playerAnimator.SetTrigger("tDeath");
             playerDead = true;
+            
+            if (collision.gameObject.tag == "arrow")
+            {
+                collision.gameObject.SetActive(false);
+            }
         }
 
     }

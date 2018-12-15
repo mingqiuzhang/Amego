@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class RandomlySpawn : MonoBehaviour {
 
-    public GameObject prefab1, prefab2,prefab3,prefab4;
+    public GameObject prefab1, prefab2,prefab3,prefab4,prefab5, prefab6;
 
     public float SpawnRate = 10f;
     public float trapSpawnRate = 10f;
@@ -25,6 +25,10 @@ public class RandomlySpawn : MonoBehaviour {
 
     Vector3 pos4;
 
+    Vector3 pos5;
+
+    Vector3 pos6;
+
     float nextSpawn = 0f;
 
     int whatToSpawn;
@@ -34,6 +38,8 @@ public class RandomlySpawn : MonoBehaviour {
 
     float temp;
     float temp2;
+
+    
     private void Start()
     {
         m_StartWait = new WaitForSeconds(m_StartDelay);
@@ -50,15 +56,17 @@ public class RandomlySpawn : MonoBehaviour {
     {
         pos1 = center + new Vector3(Random.Range(-size.x, size.x), 2, Random.Range(-size.z + 5, size.z));
         pos2 = center + new Vector3(Random.Range(-size.x, size.x), 2, Random.Range(-size.z + 5, size.z));
+        pos5 = center + new Vector3(Random.Range(-size.x, size.x), 2, Random.Range(-size.z + 5, size.z));
+        pos6 = center + new Vector3(Random.Range(-size.x, size.x), 2, Random.Range(-size.z + 5, size.z));
         pos3 = center + new Vector3(Random.Range(-size.x, size.x), 0, Random.Range(-size.z + 5, size.z));
         pos4 = center + new Vector3(Random.Range(-size.x, size.x), 0, Random.Range(-size.z + 5, size.z));
 
         if (Time.time > nextSpawn && temp != 0)
         {
-            whatToSpawn = Random.Range(1, 4);
+            whatToSpawn = Random.Range(1, 7);
             if (whatToSpawn == 1)
             {
-                Instantiate(prefab1, pos2, Quaternion.identity);
+                Instantiate(prefab1, pos2, transform.rotation * Quaternion.Euler(0, 90, 0));
                 temp--;
             }
             else if (whatToSpawn == 2)
@@ -68,12 +76,24 @@ public class RandomlySpawn : MonoBehaviour {
             }
             else if (whatToSpawn == 3)
             {
-                Instantiate(prefab1, pos1, Quaternion.identity);
+                Instantiate(prefab1, pos1, transform.rotation * Quaternion.Euler(0, 90, 0));
                 temp--;
             }
-            else
+            else if(whatToSpawn == 4)
             {
                 Instantiate(prefab2, pos2, Quaternion.identity);
+                temp--;
+            }
+
+            else if (whatToSpawn == 5)
+            {
+                Instantiate(prefab5, pos2, transform.rotation * Quaternion.Euler(0, 90, 0));
+                temp--;
+            }
+
+            else
+            {
+                Instantiate(prefab6, pos2, Quaternion.identity);
                 temp--;
             }
             nextSpawn = Time.time + SpawnRate;
@@ -82,7 +102,7 @@ public class RandomlySpawn : MonoBehaviour {
 
         if (Time.time > nextSpawn && temp2 != 0)
         {
-            whatToSpawn = Random.Range(1, 4);
+            whatToSpawn = Random.Range(1, 5);
             if(whatToSpawn == 1)
             {
                 Instantiate(prefab3, pos3, Quaternion.identity);

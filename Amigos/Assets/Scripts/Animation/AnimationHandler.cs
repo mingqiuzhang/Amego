@@ -6,12 +6,17 @@ public class AnimationHandler : MonoBehaviour {
 
     public AudioClip sword_attack;
     public AudioClip bow_attack;
+    public AudioClip axe_attack;
+    public AudioClip staff_attack;
     private Animator _playerAnimator;
     private CharacterMovement_Physics _character;
     private AudioSource _source;
     private bool canAttack = true;
     Transform _sword;
     Collider _collider_of_sword;
+
+    Transform _axe;
+    Collider _collider_of_axe;
 
     public float axeAttackTime = 2f;
     private float axeAttackCounter;
@@ -25,6 +30,10 @@ public class AnimationHandler : MonoBehaviour {
         _collider_of_sword = _sword.GetComponent<Collider>();
         _collider_of_sword.enabled = false;
         axeAttackCounter = axeAttackTime;
+
+        _axe = this.transform.GetChild(2).GetChild(4);
+        _collider_of_axe = _axe.GetComponent<Collider>();
+        _collider_of_axe.enabled = false;
     }
 
     void Awake()
@@ -44,12 +53,24 @@ public class AnimationHandler : MonoBehaviour {
         canAttack = true;
     }
 
+    private void Axe_Attack_Happens()
+    {
+        _source.PlayOneShot(axe_attack, (float)1);
+    }
+
     private void FireArrow()
     {
         _source.PlayOneShot(bow_attack, (float)0.5);
         _character.primaryAttack.Fire(_character.attackPoint);
         canAttack = true;
         //primaryAttack.Fire(attackPoint);
+    }
+
+    private void Fire_Magic()
+    {
+
+        _character.primaryAttack.Fire_Ice(_character.attackPoint);
+        canAttack = true;
     }
 
     public void PlayAttackAnimation(EquipedWeaponSwitch.CurrentWeapon i_weapon)
@@ -77,7 +98,11 @@ public class AnimationHandler : MonoBehaviour {
                 axeAttacking = true;
                 break;
             case EquipedWeaponSwitch.CurrentWeapon.staff:
-                _playerAnimator.SetTrigger("tStaffAttack");
+                if (canAttack == true)
+                {
+                    _playerAnimator.SetTrigger("tStaffAttack");
+                    canAttack = false;
+                }
                 break;
         }
     }
@@ -92,8 +117,10 @@ public class AnimationHandler : MonoBehaviour {
         {
             _character.set_canMove(false);
             axeAttackCounter -= Time.deltaTime;
-            if(axeAttackCounter < 0)
+            _collider_of_axe.enabled = true;
+            if (axeAttackCounter < 0)
             {
+                _collider_of_axe.enabled = false;
                 axeAttacking = false;
                 _character.set_canMove(true);
                 _playerAnimator.SetBool("bAxeAttack", false);
