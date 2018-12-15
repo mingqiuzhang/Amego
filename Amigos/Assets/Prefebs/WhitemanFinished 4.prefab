@@ -1496,7 +1496,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1 &1903814113209028
 GameObject:
   m_ObjectHideFlags: 1
@@ -2036,7 +2036,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1900890229451116}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -1.8978641, y: -2.371, z: 2.3400002}
+  m_LocalPosition: {x: -1.8978641, y: 2.6, z: 2.34}
   m_LocalScale: {x: 0.05, y: 0.05000003, z: 0.05000003}
   m_Children:
   - {fileID: 4965618887296702}
@@ -3688,11 +3688,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PlayerNumber: 1
   m_TurnSpeed: 180
-  horizontalAxis: Horizontal_Controller1
-  verticalAxis: Vertical_Controller1
-  horizontalThumbstick: Horizontal_Controller1
-  verticalThumbstick: Vertical_Controller1
-  attackAxis: Fire1_Controller1
+  horizontalAxis: Horizontal_Controller3
+  verticalAxis: Vertical_Controller3
+  horizontalThumbstick: Horizontal_Controller3
+  verticalThumbstick: Vertical_Controller3
+  attackAxis: Fire1_Controller3
   maxSpeed: 7
   acceleration: 50
   aimType: 0
@@ -3858,10 +3858,10 @@ ParentConstraint:
   m_GameObject: {fileID: 1900890229451116}
   m_Enabled: 1
   m_Weight: 1
-  m_TranslationAtRest: {x: -1.8978641, y: -2.371, z: 2.3400002}
+  m_TranslationAtRest: {x: -1.8978641, y: 2.6, z: 2.34}
   m_RotationAtRest: {x: 90, y: 0, z: 0}
   m_TranslationOffsets:
-  - {x: 0.559495, y: -2.1923003, z: 5.0046444}
+  - {x: 0.6848507, y: -2.170185, z: 0.03527546}
   m_RotationOffsets:
   - {x: 0.25488314, y: -1.4450309, z: -169.74263}
   m_AffectTranslationX: 1

@@ -196,7 +196,8 @@ using System.Collections;
 
             if (Input.GetAxis(attackAxis) > 0.5f)
             {
-                if (_weapon_switch_system.weapon == EquipedWeaponSwitch.CurrentWeapon.bow)
+                if (_weapon_switch_system.weapon == EquipedWeaponSwitch.CurrentWeapon.bow ||
+                _weapon_switch_system.weapon == EquipedWeaponSwitch.CurrentWeapon.staff)
                 {
                     if (_fire_control_system._canFire == false)
                     {
@@ -210,6 +211,7 @@ using System.Collections;
                 }
                 else
                 {
+
                     animationHandler.PlayAttackAnimation(_weapon_switch_system.weapon);
                     print("attack");
                 }          

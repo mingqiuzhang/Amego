@@ -33,6 +33,7 @@ public class EquipedWeaponSwitch : MonoBehaviour
                 {
                     if (_collider.gameObject.tag == "bow")
                     {
+                        this.GetComponent<AnimationHandler>().canAttackTrue();
                         weapon = CurrentWeapon.bow;
                         _weapon_pro.Enable(); 
                     }
@@ -46,6 +47,7 @@ public class EquipedWeaponSwitch : MonoBehaviour
                     }
                     else if (_collider.gameObject.tag == "sword")
                     {
+                        this.GetComponent<AnimationHandler>().canAttackTrue();
                         weapon = CurrentWeapon.sword;
                     }
                     print(_collider.name);

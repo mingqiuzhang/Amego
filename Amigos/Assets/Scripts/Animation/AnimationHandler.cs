@@ -68,7 +68,7 @@ public class AnimationHandler : MonoBehaviour {
 
     private void Fire_Magic()
     {
-
+        _source.PlayOneShot(staff_attack, (float)0.5);
         _character.primaryAttack.Fire_Ice(_character.attackPoint);
         canAttack = true;
     }
@@ -128,5 +128,10 @@ public class AnimationHandler : MonoBehaviour {
                 _playerAnimator.applyRootMotion = false;
             }
         }
+    }
+
+    public void canAttackTrue()
+    {
+        canAttack = true;
     }
 }

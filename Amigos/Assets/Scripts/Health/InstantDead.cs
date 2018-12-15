@@ -19,10 +19,12 @@ public class InstantDead : MonoBehaviour {
     void Start () {
         despawnCounter = despawnTime;
         _playerAnimator = GetComponent<Animator>();
+
     }
 
     void Awake()
     {
+
         _source = this.GetComponent<AudioSource>();
     }
     // Update is called once per frame
@@ -51,6 +53,8 @@ public class InstantDead : MonoBehaviour {
             despawnCounter -= Time.deltaTime;
             if (despawnCounter < 0)
             {
+                character.GetComponent<Rigidbody>().isKinematic = false;
+                character.GetComponent<CharacterMovement_Physics>().set_canAim(true);
                 character.SetActive(false);
                 despawnCounter = despawnTime;
                 playerDead = false;

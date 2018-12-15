@@ -157,6 +157,7 @@ GameObject:
   - component: {fileID: 4341307572496536}
   - component: {fileID: 135046476042344114}
   - component: {fileID: 54034475596946820}
+  - component: {fileID: 114245711613688472}
   m_Layer: 0
   m_Name: ice_attack2
   m_TagString: arrow
@@ -713,6 +714,21 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 32
   m_CollisionDetection: 0
+--- !u!114 &114245711613688472
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1846061051256852}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5d977a978f8c43bab0badcbf341dc59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileSpeed: 10
+  damageAmount: 10
+  damageFunctionName: DealDamage
+  timeToDie: 5
 --- !u!135 &135046476042344114
 SphereCollider:
   m_ObjectHideFlags: 1
